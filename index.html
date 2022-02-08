@@ -16,19 +16,17 @@
   </head>
   <body>
     <h1 class="text-center m-5 text-info">ChessBoard Pattern Generator</h1>
-    <div class="input-group input-group-md w-50 mx-auto" id="input">
+    <div
+      class="d-flex flex-row flex-wrap input-group input-group-md w-50 mx-auto"
+      id="input"
+    >
       <input
         id="rows"
         class="form-control m-3"
         type="number"
         placeholder="Enter the number of rows"
       />
-      <input
-        id="columns"
-        class="form-control m-3"
-        type="number"
-        placeholder="Enter the number of columns"
-      />
+      <p id="error" class="w-100 d-flex m-2 text-danger"></p>
     </div>
     <div style="height: 100vh" id="chessBoard" class="text-center">
       <button type="button" class="text-center btn btn-info m-3">

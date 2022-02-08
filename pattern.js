@@ -3,7 +3,6 @@ const btn = document.querySelector(".btn");
 const inputDiv = document.getElementById("input");
 const chessBoard = document.getElementById("chessBoard");
 const rows = document.getElementById("rows");
-const columns = document.getElementById("columns");
 
 const createChessBoard = (rows, columns) => {
   let tr;
@@ -36,11 +35,12 @@ const createChessBoard = (rows, columns) => {
 };
 
 btn.addEventListener("click", () => {
-  if (!rows.value || !columns.value) {
-    alert("Enter values properly!");
+  if (!rows.value || rows.value <= 0) {
+    document.getElementById("error").textContent = "Enter row value properly!";
     return;
   }
-  inputDiv.style.display = "none";
-  createChessBoard(rows.value, columns.value);
+  inputDiv.setAttribute("class", "d-none");
+  createChessBoard(rows.value, rows.value);
+  document.getElementById("error").setAttribute("class", "d-none");
   btn.style.display = "none";
 });
